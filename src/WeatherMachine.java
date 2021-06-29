@@ -1,7 +1,11 @@
 
 public class WeatherMachine {
-	private Thermometer tm = new Thermometer();
-	int[] tempsArr;
+	Thermometer tm;
+	
+	// class constructor
+	public WeatherMachine() {
+		tm = new Thermometer();
+	}
 	
 	// getPastTemperatures
 	private int[] getPastTemperatures() {
@@ -16,11 +20,10 @@ public class WeatherMachine {
 	
 	// getWeatherReport
 	public void getWeatherReport() {
+		int[] tempsArr = getPastTemperatures();
+		
 		System.out.println("Your Last 24 Hours:");
 		System.out.println("                   ");
-		
-		WeatherMachine wm = new WeatherMachine();
-		int[] tempsArr = wm.getPastTemperatures();
         
         for(int i = 0; i < tempsArr.length; i++) {
         	System.out.println(i + ":00 - " + tempsArr[i] + " degrees");
