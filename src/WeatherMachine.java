@@ -1,11 +1,11 @@
 
 public class WeatherMachine {
-	Thermometer tm;
+	Thermometer tm = new Thermometer();
+	String city = "";
 	
-	// class constructor
-	public WeatherMachine() {
-		tm = new Thermometer();
-	}
+	// class constructors
+	public WeatherMachine() {}
+	public WeatherMachine(String city) { this.city = city; }
 	
 	// getPastTemperatures
 	private int[] getPastTemperatures() {
@@ -22,6 +22,10 @@ public class WeatherMachine {
 	public void getWeatherReport() {
 		int[] tempsArr = getPastTemperatures();
 		
+		if(!city.equals("")) {
+			System.out.println("Location: " + city);
+			System.out.println("                   ");
+		}
 		System.out.println("Your Last 24 Hours:");
 		System.out.println("                   ");
         
