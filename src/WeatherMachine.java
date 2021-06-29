@@ -1,8 +1,9 @@
-import java.util.Arrays;
 
 public class WeatherMachine {
 	private Thermometer tm = new Thermometer();
+	int[] tempsArr;
 	
+	// getPastTemperatures
 	private int[] getPastTemperatures() {
 		int[] temperatures = new int[24];
 		
@@ -12,12 +13,19 @@ public class WeatherMachine {
 		
 		return temperatures;
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		WeatherMachine wm = new WeatherMachine();
+	
+	// getWeatherReport
+	public void getWeatherReport() {
+		System.out.println("Your Last 24 Hours:");
+		System.out.println("                   ");
 		
-		System.out.println("--> " + Arrays.toString( wm.getPastTemperatures() ));
+		WeatherMachine wm = new WeatherMachine();
+		int[] tempsArr = wm.getPastTemperatures();
+        
+        for(int i = 0; i < tempsArr.length; i++) {
+        	System.out.println(i + ":00 - " + tempsArr[i] + " degrees");
+        	System.out.println("                   ");
+        }
 	}
-
+	
 }
