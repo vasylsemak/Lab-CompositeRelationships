@@ -1,10 +1,10 @@
 
 public class WeatherMachine {
 	Thermometer tm = new Thermometer();
-	String city = "";
+	String city;
 	
 	// class constructors
-	public WeatherMachine() {}
+	public WeatherMachine() { this.city = ""; }
 	public WeatherMachine(String city) { this.city = city; }
 	
 	// getPastTemperatures
